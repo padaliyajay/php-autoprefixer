@@ -1,0 +1,6 @@
+{
+    "name": "php-autoprefixer",
+    "require": {
+        "sabberworm/php-css-parser": "*"
+    }
+}
