@@ -1,5 +1,12 @@
 {
-    "name": "php-autoprefixer",
+    "name": "padaliyajay/php-autoprefixer",
+    "description": "CSS Autoprefixer written in pure PHP.",
+	"license": "MIT",
+    "authors": [
+        {
+            "name": "Jay padaliya"
+        }
+    ],
     "require": {
         "sabberworm/php-css-parser": "*"
     }
