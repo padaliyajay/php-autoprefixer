@@ -1,6 +1,8 @@
 <?php
 require_once '../vendor/autoload.php';
 
+use Padaliyajay\PHPAutoprefixer\Autoprefixer;
+
 // Common
 //require_once '../../../PHP-CSS-Parser/lib/Sabberworm/CSS/Renderable.php';
 //require_once '../../../PHP-CSS-Parser/lib/Sabberworm/CSS/Settings.php';
@@ -69,7 +71,7 @@ require_once '../vendor/autoload.php';
 //require_once '../lib/Padaliyajay/PHPAutoprefixer/Compile/RuleSet.php';
 //require_once '../lib/Padaliyajay/PHPAutoprefixer/Compile/DeclarationBlock.php';
 
-$autoprefixer = new Padaliyajay\PHPAutoprefixer\Autoprefixer(file_get_contents('unprefixed-bootstrap.css'));
+$autoprefixer = new Autoprefixer(file_get_contents('unprefixed-bootstrap.css'));
 file_put_contents('prefixed-bootstrap.css', $autoprefixer->compile());
 
 //$css_parser = new Sabberworm\CSS\Parser(file_get_contents('C:\wamp64\www\scssphp\example\bootstrap-4.1.3\dist\css\bootstrap.css'));
