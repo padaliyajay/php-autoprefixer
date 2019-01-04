@@ -11,6 +11,6 @@
         "sabberworm/php-css-parser": "*"
     },
 	"autoload":{
-		"psr-4": {"Padaliyajay\\PHPAutoprefixer\\": "lib/Padaliyajay/PHPAutoprefixer"}
+		"psr-4": {"Padaliyajay\\PHPAutoprefixer\\": "src"}
 	}
 }
