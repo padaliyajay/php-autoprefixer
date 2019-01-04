@@ -2,11 +2,11 @@
 CSS autoprefixer written in pure PHP
 
 ## Installation
-Simply add a dependency on padaliyajay/php-autoprefixer to your composer.json file
-
+Simply add a dependency on padaliyajay/php-autoprefixer to your composer.json file if you use [Composer](https://getcomposer.org/) to manage the dependencies of your project:
 ```
 composer require padaliyajay/php-autoprefixer
 ```
+Although it's recommended to use Composer, you can actually [include these files](https://github.com/padaliyajay/php-autoprefixer/wiki/Installation) anyway you want.
 
 ## Usage
 ```
@@ -20,4 +20,4 @@ $prefixed_css = $autoprefixer->compile();
 
 ## License
 
-Minify is [MIT](http://opensource.org/licenses/MIT) licensed.
+[MIT](http://opensource.org/licenses/MIT) licensed.
