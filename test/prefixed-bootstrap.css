@@ -5669,9 +5669,7 @@ button.close {
 	margin-bottom: .5rem;
 }
 
-.bs-popover-top .arrow, .bs-popover-auto[x-placement^="top"] .arrow {
-	bottom: calc(( .5rem + 1px ) * -1);
-}
+.bs-popover-top .arrow, .bs-popover-auto[x-placement^="top"] .arrow {}
 
 .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before, .bs-popover-top .arrow::after, .bs-popover-auto[x-placement^="top"] .arrow::after {
 	border-width: .5rem .5rem 0;
@@ -5692,7 +5690,6 @@ button.close {
 }
 
 .bs-popover-right .arrow, .bs-popover-auto[x-placement^="right"] .arrow {
-	left: calc(( .5rem + 1px ) * -1);
 	width: .5rem;
 	height: 1rem;
 	margin: .3rem 0;
@@ -5716,9 +5713,7 @@ button.close {
 	margin-top: .5rem;
 }
 
-.bs-popover-bottom .arrow, .bs-popover-auto[x-placement^="bottom"] .arrow {
-	top: calc(( .5rem + 1px ) * -1);
-}
+.bs-popover-bottom .arrow, .bs-popover-auto[x-placement^="bottom"] .arrow {}
 
 .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before, .bs-popover-bottom .arrow::after, .bs-popover-auto[x-placement^="bottom"] .arrow::after {
 	border-width: 0 .5rem .5rem .5rem;
@@ -5750,7 +5745,6 @@ button.close {
 }
 
 .bs-popover-left .arrow, .bs-popover-auto[x-placement^="left"] .arrow {
-	right: calc(( .5rem + 1px ) * -1);
 	width: .5rem;
 	height: 1rem;
 	margin: .3rem 0;
