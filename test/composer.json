@@ -1,2 +1,6 @@
 {
+    "name": "hp/test",
+    "require": {
+        "padaliyajay/php-autoprefixer": "^1.0"
+    }
 }
