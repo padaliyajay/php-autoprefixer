@@ -7,6 +7,7 @@ class Webkit extends Vendor {
     protected static $RULE_PROPERTY = array(
         'column-count' => '-webkit-column-count',
         'column-gap' => '-webkit-column-gap',
+        'clip-path' => '-webkit-clip-path',
         'user-select' => '-webkit-user-select',
         'appearance' => '-webkit-appearance',
         'animation' => '-webkit-animation',
