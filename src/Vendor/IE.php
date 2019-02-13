@@ -12,19 +12,23 @@ class IE extends Vendor {
         'flex-flow' => '-ms-flex-flow',
         'flex-direction' => '-ms-flex-direction',
         'flex-shrink' => '-ms-flex-negative',
+        'flow-from' => '-ms-flow-from',
+        'flow-into' => '-ms-flow-into',
         'align-items' => '-ms-flex-align',
         'align-content' => '-ms-flex-line-pack',
         'align-self' => '-ms-flex-item-align',
         'justify-content' => '-ms-flex-pack',
         'order' => '-ms-flex-order',
         'user-select' => '-ms-user-select',
-        
+        'hyphens' => '-ms-hyphens',
+        'word-break' => '-ms-word-break',
     );
     
     protected static $RULE_VALUE = array(
         'display' => array(
             'flex' => '-ms-flexbox',
             'inline-flex' => '-ms-inline-flexbox',
+            'grid' => '-ms-grid',
         ),
         '-ms-flex-align' => array('flex-start' => 'start', 'flex-end' => 'end'),
         '-ms-flex-line-pack' => array('flex-start' => 'start', 'flex-end' => 'end', 'space-between' => 'justify', 'space-around' => 'distribute'),
