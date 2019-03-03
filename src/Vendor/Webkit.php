@@ -24,7 +24,6 @@ class Webkit extends Vendor {
         'flow-into' => '-webkit-flow-into',
         'hyphens' => '-webkit-hyphens',
         'mask-image' => '-webkit-mask-image',
-        
     );
     
     protected static $RULE_VALUE = array(
