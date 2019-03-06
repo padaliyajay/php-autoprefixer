@@ -22,6 +22,8 @@ class IE extends Vendor {
         'user-select' => '-ms-user-select',
         'hyphens' => '-ms-hyphens',
         'word-break' => '-ms-word-break',
+        'transform'  => '-ms-transform',
+        'transform-origin'  => '-ms-transform-origin'
     );
     
     protected static $RULE_VALUE = array(
