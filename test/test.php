@@ -53,6 +53,7 @@ use Padaliyajay\PHPAutoprefixer\Autoprefixer;
 //require_once 'PHP-CSS-Parser/lib/Sabberworm/CSS/Parsing/SourceException.php';
 //require_once 'PHP-CSS-Parser/lib/Sabberworm/CSS/Parsing/OutputException.php';
 //require_once 'PHP-CSS-Parser/lib/Sabberworm/CSS/Parsing/UnexpectedTokenException.php';
+//require_once 'PHP-CSS-Parser/lib/Sabberworm/CSS/Parsing/ParserState.php';
 
 // Vendor compile and parsing
 //require_once 'padaliyajay/php-autoprefixer/src/autoprefixer.php';
