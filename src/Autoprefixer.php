@@ -11,7 +11,7 @@ class Autoprefixer {
 
     /**
      * @param bool $prettyOutput
-     * @return string|bool
+     * @return string|false
      */
     public function compile($prettyOutput = true) {
         if($this->css_parser){
