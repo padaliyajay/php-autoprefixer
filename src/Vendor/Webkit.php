@@ -37,6 +37,7 @@ class Webkit extends Vendor {
     
     protected static $PSEUDO = array(
         '::placeholder' => '::-webkit-input-placeholder',
+        '::file-upload-button' => '::-webkit-file-upload-button',
     );
     
     protected static $AT_RULE = array('keyframes' => '-webkit-keyframes');
