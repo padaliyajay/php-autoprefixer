@@ -47,9 +47,14 @@ class Autoprefixer {
             }
 
             // DeclarationBlock
-            if($content instanceof \Sabberworm\CSS\RuleSet\DeclarationBlock){
-                $compile_declarationBlock = new Compile\DeclarationBlock($content);
-                $compile_declarationBlock->compile();
+            if ($content instanceof \Sabberworm\CSS\RuleSet\DeclarationBlock){
+                 $compile_declarationBlock = new Compile\DeclarationBlock($content);
+                 $m_declarationBlock = $compile_declarationBlock->compile();
+
+                 if ($m_declarationBlock){
+                      // Pseudo selctors must have their own Declaration Block
+                      $vendor_contents = array_merge($vendor_contents, $m_declarationBlock);
+                 }
             }
 
             // AtRule

@@ -41,6 +41,18 @@ class DeclarationBlock {
             }
         }
         
+        if ($total_added){
+             $vendor_contents = [];
+
+             foreach ($vendors_selector as $key => $selector){
+                  $p_declarationBlock = clone $this->declarationBlock;
+                  $p_declarationBlock->setSelectors($selector->getSelector());
+                  $vendor_contents[] = $p_declarationBlock;
+             }
+
+             return $vendor_contents;
+        }
+
         $this->declarationBlock->setSelectors($m_selectors);
     }
 }
