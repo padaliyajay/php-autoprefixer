@@ -29,7 +29,7 @@ class DeclarationBlock {
             $vendors_selector = $parse_selector->getVendorsSelector();
             
             // Remove already existing value
-            $_vendors_selector = array_merge($_vendors_selector, array_filter($vendors_selector, function ($vendor_selector) use ($m_selectors)
+            $_vendors_selector = array_merge($_vendors_selector, array_filter($vendors_selector, function ($vendor_selector) use ($m_selectors) {
                 if(!in_array((string)$vendor_selector, array_map('strval', $m_selectors))){
                     return true;
                 } else {
