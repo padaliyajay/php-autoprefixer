@@ -41,6 +41,7 @@ class IE extends Vendor {
     
     protected static $PSEUDO = array(
         '::placeholder' => '::-ms-input-placeholder',
+        ':placeholder-shown' => ':-ms-input-placeholder',
     );
 }
 
