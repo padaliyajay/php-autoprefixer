@@ -9,7 +9,7 @@ composer require padaliyajay/php-autoprefixer
 Although it's recommended to use Composer, you can actually [include these files](https://github.com/padaliyajay/php-autoprefixer/wiki/Installation) anyway you want.
 
 ## Usage
-```
+```php
 use Padaliyajay\PHPAutoprefixer\Autoprefixer;
 
 $unprefixed_css = file_get_contents('main.css'); // CSS code
@@ -17,6 +17,37 @@ $unprefixed_css = file_get_contents('main.css'); // CSS code
 $autoprefixer = new Autoprefixer($unprefixed_css);
 $prefixed_css = $autoprefixer->compile();
 ```
+
+## Options
+
+You can pass options to the `compile()` method.
+
+### `prettyOutput`
+
+Example:
+```php
+$autoprefixer->compile(false); // Output minified CSS
+```
+Defines if the prefixed CSS will be a verbose/prettified output. When `false` the output will be minified.
+
+Default: `true`
+
+### `vendors`
+
+Example:
+```php
+$custom_vendors = array(
+    // Padaliyajay\PHPAutoprefixer\Vendor\IE::class, // Omit prefixes for IE
+    Padaliyajay\PHPAutoprefixer\Vendor\Webkit::class,
+    Padaliyajay\PHPAutoprefixer\Vendor\Mozilla::class,
+    MyNamespace\Custom\Opera::class // Use custom vendor prefixes
+);
+
+$autoprefixer->compile(false, $custom_vendors);
+```
+Define which vendor classes should be used for prefixing. You can omit unwanted vendors like e.g. IE. If passed, only the vendor classes in the array will be used.
+
+Default: `null`
 
 ## License
 

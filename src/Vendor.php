@@ -1,31 +1,38 @@
 <?php
 namespace Padaliyajay\PHPAutoprefixer;
 
+use Padaliyajay\PHPAutoprefixer\Vendor\IE;
+use Padaliyajay\PHPAutoprefixer\Vendor\Mozilla;
+use Padaliyajay\PHPAutoprefixer\Vendor\Webkit;
+
 class Vendor {
-    const Vendors = array('IE', 'Mozilla', 'Webkit');
-    
+    public static $vendors = array(
+        IE::class,
+        Mozilla::class,
+        Webkit::class
+    );
+
     public static function getRuleProperty($vendor){
-        $vendor_class = 'Padaliyajay\PHPAutoprefixer\Vendor\\' . $vendor;
-        return $vendor_class::getRuleProperty();
+        return $vendor::getRuleProperty();
     }
-    
+
     public static function getRuleValue($vendor){
-        $vendor_class = 'Padaliyajay\PHPAutoprefixer\Vendor\\' . $vendor;
-        return $vendor_class::getRuleValue();
+        return $vendor::getRuleValue();
     }
-    
+
     public static function getPseudo($vendor){
-        $vendor_class = 'Padaliyajay\PHPAutoprefixer\Vendor\\' . $vendor;
-        return $vendor_class::getPseudo();
+        return $vendor::getPseudo();
     }
-    
+
     public static function getATRule($vendor){
-        $vendor_class = 'Padaliyajay\PHPAutoprefixer\Vendor\\' . $vendor;
-        return $vendor_class::getATRule();
+        return $vendor::getATRule();
     }
-    
+
     public static function getVendors(){
-        return self::Vendors;
+        return self::$vendors;
+    }
+
+    public static function setVendors($vendors){
+        self::$vendors = $vendors;
     }
 }
-
