@@ -37,7 +37,7 @@ Default: `true`
 Example:
 ```php
 $custom_vendors = array(
-    // Padaliyajay\PHPAutoprefixer\Vendor\IE::class, // Omit prefixes for IE
+    // Omit prefixes for IE
     Padaliyajay\PHPAutoprefixer\Vendor\Webkit::class,
     Padaliyajay\PHPAutoprefixer\Vendor\Mozilla::class,
     MyNamespace\Custom\Opera::class // Use custom vendor prefixes
@@ -45,9 +45,16 @@ $custom_vendors = array(
 
 $autoprefixer->compile(false, $custom_vendors);
 ```
-Define which vendor classes should be used for prefixing. You can omit unwanted vendors like e.g. IE. If passed, only the vendor classes in the array will be used.
+Define which vendor classes should be used for prefixing. You can omit unwanted vendors like e.g. IE. If passed, only the vendor classes in the passed array will be used.
 
-Default: `null`
+Default: 
+```php
+array(
+    Padaliyajay\PHPAutoprefixer\Vendor\IE::class,
+    Padaliyajay\PHPAutoprefixer\Vendor\Webkit::class,
+    Padaliyajay\PHPAutoprefixer\Vendor\Mozilla::class,
+)
+```
 
 ## License
 

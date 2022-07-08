@@ -20,7 +20,7 @@ class Autoprefixer {
             return false;
         }
 
-        if ($vendors && is_array($vendors)) {
+        if (is_array($vendors)) {
             Vendor::setVendors($vendors);
         }
 
