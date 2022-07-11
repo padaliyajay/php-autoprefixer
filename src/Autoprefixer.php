@@ -12,21 +12,26 @@ class Autoprefixer {
     /**
      * @param bool $prettyOutput
      * @return string|false
+     * @throws \Sabberworm\CSS\Parsing\SourceException
      */
     public function compile($prettyOutput = true) {
-        if($this->css_parser){
-            $css_document = $this->css_parser->parse();
-
-            $this->compileCSSList($css_document);
-
-            $outputFormat = $prettyOutput ?
-                \Sabberworm\CSS\OutputFormat::createPretty() :
-                \Sabberworm\CSS\OutputFormat::createCompact();
-
-            return $css_document->render($outputFormat);
-        } else {
+        if (!$this->css_parser) {
             return false;
         }
+
+        $css_document = $this->css_parser->parse();
+
+        $this->compileCSSList($css_document);
+
+        $outputFormat = $prettyOutput ?
+            \Sabberworm\CSS\OutputFormat::createPretty() :
+            \Sabberworm\CSS\OutputFormat::createCompact();
+
+        return $css_document->render($outputFormat);
+    }
+
+    public function setVendors($vendors) {
+        Vendor::setVendors($vendors);
     }
 
     /**
