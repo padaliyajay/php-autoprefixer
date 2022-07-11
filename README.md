@@ -20,32 +20,30 @@ $prefixed_css = $autoprefixer->compile();
 
 ## Options
 
-You can pass options to the `compile()` method.
-
 ### `prettyOutput`
 
 Example:
 ```php
 $autoprefixer->compile(false); // Output minified CSS
 ```
-Defines if the prefixed CSS will be a verbose/prettified output. When `false` the output will be minified.
+Defines if the prefixed CSS will be a verbose/prettified output. When `false` the output will be minified. You can pass it as an option to the `compile()` method.
 
 Default: `true`
 
-### `vendors`
+### `setVendors`
 
 Example:
 ```php
-$custom_vendors = array(
+$autoprefixer->setVendors(array(
     // Omit prefixes for IE
     Padaliyajay\PHPAutoprefixer\Vendor\Webkit::class,
     Padaliyajay\PHPAutoprefixer\Vendor\Mozilla::class,
     MyNamespace\Custom\Opera::class // Use custom vendor prefixes
-);
+));
 
-$autoprefixer->compile(false, $custom_vendors);
+$autoprefixer->compile();
 ```
-Define which vendor classes should be used for prefixing. You can omit unwanted vendors like e.g. IE. If passed, only the vendor classes in the passed array will be used.
+Define which vendor classes should be used for prefixing. You can omit unwanted vendors like e.g. IE. If used, only the vendor classes in the given array will take effect.
 
 Default: 
 ```php

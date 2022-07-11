@@ -11,17 +11,12 @@ class Autoprefixer {
 
     /**
      * @param bool $prettyOutput
-     * @param null|array $vendors
      * @return string|false
      * @throws \Sabberworm\CSS\Parsing\SourceException
      */
-    public function compile($prettyOutput = true, $vendors = null) {
+    public function compile($prettyOutput = true) {
         if (!$this->css_parser) {
             return false;
-        }
-
-        if (is_array($vendors)) {
-            Vendor::setVendors($vendors);
         }
 
         $css_document = $this->css_parser->parse();
@@ -33,6 +28,10 @@ class Autoprefixer {
             \Sabberworm\CSS\OutputFormat::createCompact();
 
         return $css_document->render($outputFormat);
+    }
+
+    public function setVendors($vendors) {
+        Vendor::setVendors($vendors);
     }
 
     /**
