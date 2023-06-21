@@ -17,6 +17,7 @@ class Webkit extends Vendor {
         'transform' => '-webkit-transform',
         'transform-origin' => '-webkit-transform-origin',
         'backface-visibility' => '-webkit-backface-visibility',
+        'backdrop-filter' => '-webkit-backdrop-filter',
         'perspective' => '-webkit-perspective',
         'background-clip' => '-webkit-background-clip',
         'filter' => '-webkit-filter',
