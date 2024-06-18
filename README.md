@@ -57,7 +57,3 @@ array(
 ## License
 
 [MIT](http://opensource.org/licenses/MIT) licensed.
-
-
-## Donate & Support
-[PayPal.me](https://www.paypal.me/padaliyajay/)
