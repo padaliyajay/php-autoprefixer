@@ -79,7 +79,14 @@ class Autoprefixer {
 
             // Remove already existing vendor content
             $vendor_contents = array_filter($vendor_contents, function($vendor_content) use($m_contents){
-                if(!in_array((string)$vendor_content, array_map('strval', $m_contents))){
+                $outputFormat = new \Sabberworm\CSS\OutputFormat();
+                $current_vendor_string = $vendor_content->render($outputFormat);
+                
+                $m_contents_strings = array_map(function ($m_content_obj) use ($outputFormat) {
+                    return $m_content_obj->render($outputFormat);
+                }, $m_contents);
+
+                if(!in_array($current_vendor_string, $m_contents_strings)){
                     return true;
                 } else {
                     return false;
