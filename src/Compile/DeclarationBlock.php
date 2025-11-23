@@ -30,13 +30,21 @@ class DeclarationBlock {
             
             // Remove already existing value
             $_vendors_selector = array_merge($_vendors_selector, array_filter($vendors_selector, function ($vendor_selector) use ($m_selectors) {
-                if(!in_array((string)$vendor_selector, array_map('strval', $m_selectors))){
+                $outputFormat = new \Sabberworm\CSS\OutputFormat();
+                $current_vendor_string = $vendor_selector->render($outputFormat);
+        
+                $m_selectors_strings = array_map(function ($m_selector_obj) use ($outputFormat) {
+                    // Use the new render method on each individual object
+                    return $m_selector_obj->render($outputFormat);
+                }, $m_selectors);
+
+                if(!in_array($current_vendor_string, $m_selectors_strings)){
                     return true;
                 } else {
                     return false;
                 }
             }));
-            
+
             if($_vendors_selector){
                 array_splice($m_selectors, $key + $total_added, 0, $vendors_selector);
                 $total_added += count($_vendors_selector);

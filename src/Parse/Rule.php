@@ -33,7 +33,7 @@ class Rule {
             
             if($rule_vendor_property){
                 $vendor_rule = clone $this->rule;
-                $vendor_rule->setRule((string)$rule_vendor_property);
+                $vendor_rule->setRule($rule_vendor_property->render(new \Sabberworm\CSS\OutputFormat()));
                 
                 $vendor_value = $rule_vendor_property->getVendorValue($this->rule->getValue(), $vendor);
                 if($vendor_value){

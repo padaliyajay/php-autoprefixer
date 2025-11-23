@@ -28,7 +28,14 @@ class RuleSet {
             
             // Remove already existing value
             $vendor_rules = array_filter($vendor_rules, function($vendor_rule) use($m_rules) {
-                if(!in_array((string)$vendor_rule, array_map('strval', $m_rules))){
+                $outputFormat = new \Sabberworm\CSS\OutputFormat();
+                $current_vendor_string = $vendor_rule->render($outputFormat);
+                
+                $m_rules_strings = array_map(function ($m_rule_obj) use ($outputFormat) {
+                    return $m_rule_obj->render($outputFormat);
+                }, $m_rules);
+
+                if(!in_array($current_vendor_string, $m_rules_strings)){
                     return true;
                 } else {
                     return false;
